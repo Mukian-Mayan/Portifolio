@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Let's Connect</title>
+    <link rel="stylesheet" href="/content/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="contact-background">
+        <div class="bg-image"></div>
+        <div class="animated-gradient"></div>
+        <div class="floating-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="navBar"> 
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="menu-icon"><span>&#9776;</span></div>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <main class="contact-main">
+        <div class="contact-container">
+            <!-- Left Side: Info Cards -->
+            <div class="contact-info-side">
+                <div class="contact-header fade-in-left">
+                    <h1>Let's Create<br><span class="gradient-text">Something Amazing</span></h1>
+                    <p>Have a project in mind? Want to collaborate? Just want to say hi? Drop me a message!</p>
+                </div>
+
+                <!-- Contact Methods -->
+                <div class="contact-methods">
+                    <div class="contact-method-card slide-in-left" style="animation-delay: 0.2s">
+                        <div class="method-icon email-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="method-content">
+                            <h3>Email Me</h3>
+                            <a href="mailto:your.email@example.com">your.email@example.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-method-card slide-in-left" style="animation-delay: 0.3s">
+                        <div class="method-icon phone-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="method-content">
+                            <h3>Call Me</h3>
+                            <a href="tel:+1234567890">+1 (234) 567-890</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-method-card slide-in-left" style="animation-delay: 0.4s">
+                        <div class="method-icon location-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="method-content">
+                            <h3>Location</h3>
+                            <p>Kampala, Uganda</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="social-connect slide-in-left" style="animation-delay: 0.5s">
+                    <h3>Connect With Me</h3>
+                    <div class="social-grid">
+                        <a href="#" class="social-link github-link">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="social-link linkedin-link">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="#" class="social-link twitter-link">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                        <a href="#" class="social-link instagram-link">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Contact Form -->
+            <div class="contact-form-side">
+                <div class="form-container fade-in-right">
+                    <div class="form-header">
+                        <h2>Send a Message</h2>
+                        <p>Fill out the form and I'll get back to you within 24 hours</p>
+                    </div>
+
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">
+                                <i class="fas fa-user"></i> Your Name
+                            </label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i> Your Email
+                            </label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">
+                                <i class="fas fa-tag"></i> Subject
+                            </label>
+                            <input type="text" id="subject" name="subject" required placeholder="Project Inquiry">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">
+                                <i class="fas fa-comment-dots"></i> Your Message
+                            </label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                        </button>
+                    </form>
+
+                    <div class="form-success" id="successMessage">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Message Sent!</h3>
+                        <p>Thanks for reaching out. I'll get back to you soon.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        const menuIcon = document.querySelector('.menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Form submission
+        const form = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Animate form out
+            form.style.transform = 'scale(0.9)';
+            form.style.opacity = '0';
+            
+            setTimeout(() => {
+                form.style.display = 'none';
+                successMessage.style.display = 'flex';
+                
+                setTimeout(() => {
+                    successMessage.style.opacity = '1';
+                    successMessage.style.transform = 'scale(1)';
+                }, 50);
+                
+                // Reset form after 5 seconds
+                setTimeout(() => {
+                    successMessage.style.opacity = '0';
+                    successMessage.style.transform = 'scale(0.9)';
+                    
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                        form.style.display = 'flex';
+                        form.reset();
+                        
+                        setTimeout(() => {
+                            form.style.opacity = '1';
+                            form.style.transform = 'scale(1)';
+                        }, 50);
+                    }, 300);
+                }, 5000);
+            }, 300);
+        });
+
+        // Input focus animations
+        const inputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('focused');
+            });
+            
+            input.addEventListener('blur', function() {
+                if (this.value === '') {
+                    this.parentElement.classList.remove('focused');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
