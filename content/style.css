@@ -211,9 +211,10 @@ a {
 }
 
 .nav-links a.active {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
     color: var(--tertiary);
-    border-bottom: 4px solid var(--tertiary);
+    border-bottom: 1px solid var(--tertiary);
+   box-shadow: 0 0 15px var(--primary-low-opacity);
 }
 
 .menu-icon {
@@ -561,111 +562,102 @@ a {
 /* ===========================
    RESPONSIVE DESIGN
    =========================== */
-@media (max-width: 768px) {
-/* NAVIGATION RESPONSIVE - FIXED! */
-@media (max-width: 992px) {
-    .nav-links {
-        gap: 1.5rem;
-    }
-    
-    .nav-links a {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
-    }
-}
+        @media (max-width: 768px) {
+        /* NAVIGATION RESPONSIVE - FIXED! */
+        @media (max-width: 992px) {
+            .nav {
+                padding: 0.5rem; /* Reduce padding to save space */
+            }
 
-@media (max-width: 768px) {
-    .navBar {
-        justify-content: space-between;
-        padding: 1rem 1.5rem;
-    }
+            .navBar {
+                width: 100%; /* Take up full width */
+                justify-content: center; /* Keep links centered */
+                padding: 0.5rem 1rem;
+                border-radius: 50px; /* Keep the pill shape */
+            }
 
-    .nav-links {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 80%;
-        height: calc(100vh - 80px);
-        background: rgba(10, 36, 114, 0.95);
-        backdrop-filter: blur(20px);
-        flex-direction: column;
-        padding: 2rem;
-        gap: 1rem;
-        border-radius: 0 20px 20px 0;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        transition: left 0.4s ease;
-        z-index: 99;
-    }
+            /* 2. Fix the links so they stay INSIDE the glassy bar */
+            .nav-links {
+                position: static;   /* REMOVE 'fixed'. This puts links back in the bar */
+                display: flex;      /* Ensure they are visible */
+                flex-direction: row;/* Keep them horizontal */
+                width: auto;        /* Stop them from being 80% wide */
+                height: auto;       /* Stop them from being full screen height */
+                background: none;   /* Remove the solid background */
+                backdrop-filter: none; /* Let the parent navBar handle the blur */
+                gap: 0.5rem;        /* Squeeze them to fit on small screens */
+                border: none;       /* Remove any side-menu borders */
+                transform: none;    /* Reset any movement */
+            }
 
-    .nav-links.active {
-        left: 0;
-    }
+            /* 3. Scale down the text slightly for mobile */
+            .nav-links a {
+                font-size: 0.75rem; /* Smaller text to fit all 5 links */
+                padding: 0.4rem 0.6rem;
+            }
+            
+            .menu-icon {
+                display: none; /* You mentioned you'll use this for something else later */
+            }
+        }
 
-    .nav-links li {
-        width: 100%;
-    }
+        @media (max-width: 480px) {
+        .nav {
+                padding: 0.25rem 0.5rem; /* Minimal space around the bar */
+            }
+            
+            .navBar {
+                padding: 0.4rem 0.6rem; /* Tighten the capsule */
+            }
+            
+            .nav-links {
+                gap: 0.2rem; /* Almost no gap between links to save every pixel */
+            }
+            
+            .nav-links a {
+                padding: 0.3rem 0.4rem;
+                font-size: 0.7rem; /* Tiny but readable font */
+                letter-spacing: -0.5px; /* Slight letter squeeze to fit all 5 links */
+            }
+            .menu-icon {
+                display: block;
+            }
 
-    .nav-links a {
-        display: block;
-        width: 100%;
-        padding: 1rem;
-        text-align: left;
-        font-size: 1rem;
-    }
+            .hero-content h1 {
+                font-size: var(--fsXL);
+            }
 
-    .menu-icon {
-        display: block;
-    }
-}
+            .hero-content p {
+                font-size: var(--fsM);
+            }
 
-@media (max-width: 480px) {
-    .nav {
-        padding: 0.5rem 1rem;
-    }
-    
-    .navBar {
-        padding: 0.75rem 1rem;
-    }
-}
+            .card {
+                width: 100%;
+                max-width: 350px;
+            }
 
-    .menu-icon {
-        display: block;
-    }
+            .shape1,
+            .shape2,
+            .shape3 {
+                width: 250px;
+                height: 250px;
+            }
+        }
 
-    .hero-content h1 {
-        font-size: var(--fsXL);
-    }
+        @media (max-width: 480px) {
+            .content {
+                padding: 2rem 1rem;
+            }
 
-    .hero-content p {
-        font-size: var(--fsM);
-    }
+            .card {
+                height: auto;
+                min-height: 200px;
+            }
 
-    .card {
-        width: 100%;
-        max-width: 350px;
-    }
-
-    .shape1,
-    .shape2,
-    .shape3 {
-        width: 250px;
-        height: 250px;
-    }
-}
-
-@media (max-width: 480px) {
-    .content {
-        padding: 2rem 1rem;
-    }
-
-    .card {
-        height: auto;
-        min-height: 200px;
-    }
-
-    .hero {
-        padding: 1rem;
-    }
+            .hero {
+                padding: 1rem;
+            }
+        }
 }
 
 
@@ -754,7 +746,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(10, 36, 114, 0.85) 0%, rgba(102, 126, 234, 0.75) 100%);
+    background: linear-gradient(135deg, rgba(0, 6, 25, 0.55) 0%, rgba(102, 126, 234, 0.45) 100%);
     backdrop-filter: blur(3px);
 }
 
@@ -1038,7 +1030,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(10, 36, 114, 0.88) 0%, rgba(177, 201, 239, 0.75) 100%);
+    background: linear-gradient(135deg, rgba(10, 36, 114, 0.58) 0%, rgba(83, 117, 173, 0.45) 100%);
     backdrop-filter: blur(2px);
 }
 
